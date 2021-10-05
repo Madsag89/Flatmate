@@ -107,7 +107,7 @@ function showDetailView(id) {
     <header class="detail-view">
          <a href="#/" class="nav-link" onclick="navigateTo('#/')"><img  src="/img/Return.svg"></a>
         <h1>${flat.title}</h1>
-    </header>
+    </header> 
 
     <div class="detail-view-contact">
       <div class="detail-view-contact-container">
@@ -116,7 +116,7 @@ function showDetailView(id) {
           <p>${flat.rent}</p>
         </div>  
         <div class="detail-view-message">
-        <button class="nav-link detail-view-button" onclick="showDetailView('${flat.id}') ; navigateTo('#/beskeder');">Skriv til udlejer</button>
+        <button class="nav-link detail-view-button" onclick="navigateTo('#/beskeder');">Skriv til udlejer</button>
         </div>
       </div>
     </div>
@@ -252,7 +252,8 @@ function showLoader(show) {
 }
 
 //Login -- Marko & Mads
-function login() {
+
+function logIn() {
   const mail = document.querySelector("#login-mail").value;
   const password = document.querySelector("#login-password").value;
 
@@ -278,7 +279,7 @@ function logOut() {
 
 //Filter flats according to log-in - Marko & Mads
 
-//Globalt variable, så man kan tilgå den i search functionen 
+//Globalt variable, så man kan tilgå resultaterne fra filterFlats i search functionen 
 let _results = [];
 
 function filterFlats() {
