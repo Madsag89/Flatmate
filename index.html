@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Flatemate SPA test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Web App">
+  <meta name="author" content="Marko Freno og Mads Agergaard">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!------------ Navigation -------------->
+  <nav class="navigation">
+    <a href="#/" class="nav-link"><i class="fas fa-home"></i><p>Hjem</p></a>
+    <a href="#/beskeder" class="nav-link"><i class="fas fa-comment"></i><p>Beskeder</p></a>
+    <a href="#/profil" class="nav-link"><i class="fas fa-user"></i><p>Profil</p></a>
+  </nav>
+
+  <!-------------- Login -------------->
+
+  <section id="login" class="page" onload="hideNavLogin()">
+    <header class="topbar">
+      <img src="img/flatmate_logo.svg" alt="logo">
+    </header>
+    <h2>Log ind</h2>
+    <div class="circles"></div>
+    <div class="circles1"></div>
+
+    <div class="flex-login">
+      <form>
+        <input id="login-mail" type="email" placeholder="Email">
+        <input id="login-password" type="password" placeholder="Adgangskode">
+        <div class="remember-me">
+          <div class="square"></div>
+          <p>Husk mig</p>
+        </div>
+        <p class="login-message" id="login-failed"></p>
+        <div class="login-button">
+          <button type="button" onclick="login() ; filterFlats()">Log ind</button>
+          <p>Har du glemt dit login eller password? <span>Klik her<span></p>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <p class="other-login">- eller log ind med -</p>
+    </div>
+    <div class="soMe-login">
+      <img src="img/Facebook.svg" alt="Facbook">
+      <img src="img/Google.svg" alt="Google">
+    </div>
+    <div class="existing-login">
+      <p>Har du ikke en konto? <span>Opret en konto her</span></p>
+    </div>
+  </section>
+
+  <!-------------- Home page -------------->
+  <section id="home" class="page">
+    <header class="home-header">
+      <h2>Udforsk</h2>
+      <div class="header-flex">
+        <input type="search" placeholder="Søg på by, postnummer..." onkeyup="search(this.value)">
+        <img src="/img/Filter.svg">
+      </div>
+    </header>
+    <!-------------- Flats container - explore -------------->
+    <div id="flats-container"></div>
+    <div id="no-result">
+      <p>Der er desværre ingen <br> resultater for din søgning.</p>
+    </div>
+  </section>
+
+
+  <!-------------- Detail view -------------->
+  <section  id="detailView" class="page">
+    <div id="flats-container-page"></div>
+  </section>
+
+
+  <!--------------Facoritter -------------->
+  <section id="favorit" class="page">
+    <header class="topbar">
+      <a href="#/" class="nav-link left">Back</a>
+      <h2>Create user</h2>
+    </header>
+  </section>
+
+  <!-------------- Beskeder -------------->
+  <section id="beskeder" class="page">
+    <header class="topbar">
+
+      <img src="/img/flatmate_logo.svg"/>
+    </header>
+    <div class="error">
+      <h2>Hov, der opstod desværre en fejl.</h2>
+      <img src="/img/error.svg"/>
+      <p>Der er enten opstået en fejl, og ellers eksisterer siden ikke længere.</p>
+      <p>Vi beklager ulejligheden.</p>
+      <button onclick="showDetailView('${flat.id}')" class="error-button">Tilbage</button>
+        <div class="error-footer">
+          <p>Har du brug for hjælp?</p>
+          <p>60 22 77 10</p>
+          <p>Support@flatmate.dk</p>
+        </div>
+
+    </div>
+  </section>
+
+
+ <!-------------- Profil -------------->
+  <section id="profil" class="page">
+    <header class="profil-header">
+      <a href=""><img src="/img/Tilbage.svg"/></a>
+      <h2>Profil</h2>
+      <i class="fas fa-user"></i>
+    </header>
+    <div class="user-profile">
+        <div class="card-profile">
+         <img class="profile-img" src="img/Thilde.jpeg" />
+        <img class="foto-img" src="/img/Foto.svg"/> 
+       </div>
+        <div class="profile-content">
+            <div class="profile-col">
+              <p>Navn</p><p>Thilde Eriksen</p>
+              </div>
+            <div class="profile-col">
+              <p>Alder</p><p>23</p>
+            </div>
+            <div class="profile-col">
+              <p>Telefon</p><p>60227710</p>
+            </div>
+            <div class="profile-col">
+              <p>Mail</p><p>thilde.e.k@live.dk</p>
+            </div>
+            <div class="profile-col">
+              <p>Civilstatus</p><p>Single</p>
+            </div>
+            <div class="profile-col">
+              <p>Telefon</p><p>60227710</p>
+            </div>
+
+            <div class="profile-btns-container">
+              <button class="profile-btn">Rediger</button>
+              <button onclick="logOut()" class="profile-btn nav-link">Log ud</button>
+            </div>
+        </div>
+
+
+    </div>
+      <!-- <a href="#/" class="nav-link left">Log ud</a> -->
+  </section>
+
+
+  <!-------------- Loader functionality  -------------->
+  <section id="loader">
+    <section class="spinner"></section>
+  </section>
+
+  <!-------------- Router functionality  -------------->
+  <script src="js/router.js"></script>
+
+  <!-------------- main js file -------------->
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

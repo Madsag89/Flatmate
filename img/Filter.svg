@@ -1,0 +1,7 @@
+<svg id="Filter" xmlns="http://www.w3.org/2000/svg" width="36" height="33" viewBox="0 0 36 33">
+  <g id="Rectangle_242" data-name="Rectangle 242" fill="#4670ce" stroke="#4670ce" stroke-width="1">
+    <rect width="36" height="33" stroke="none"/>
+    <rect x="0.5" y="0.5" width="35" height="32" fill="none"/>
+  </g>
+  <path id="Path_97" data-name="Path 97" d="M3,24.735V27.84h9.315V24.735ZM3,6.105V9.21H18.525V6.105Zm15.525,24.84V27.84h12.42V24.735H18.525V21.63H15.42v9.315ZM9.21,12.315V15.42H3v3.105H9.21V21.63h3.105V12.315Zm21.735,6.21V15.42H15.42v3.105Zm-9.315-6.21h3.105V9.21h6.21V6.105h-6.21V3H21.63Z" transform="translate(1.117 -0.603)" fill="#fff"/>
+</svg>
