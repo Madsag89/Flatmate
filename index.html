@@ -13,6 +13,11 @@
     integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
 
 </head>
 
@@ -45,7 +50,7 @@
         </div>
         <p class="login-message" id="login-failed"></p>
         <div class="login-button">
-          <button type="button" onclick="login() ; filterFlats()">Log ind</button>
+          <button type="button" onclick="logIn() ; filterFlats()">Log ind</button>
           <p>Har du glemt dit login eller password? <span>Klik her<span></p>
         </div>
       </form>
@@ -105,13 +110,14 @@
       <img src="/img/error.svg"/>
       <p>Der er enten opstået en fejl, og ellers eksisterer siden ikke længere.</p>
       <p>Vi beklager ulejligheden.</p>
-      <button onclick="showDetailView('${flat.id}')" class="error-button">Tilbage</button>
+      <a href="/#" onclick="navigateTo('/#')">
+      <button class="error-button">Hjem</button>
+      </a>
         <div class="error-footer">
           <p>Har du brug for hjælp?</p>
           <p>60 22 77 10</p>
           <p>Support@flatmate.dk</p>
         </div>
-
     </div>
   </section>
 
